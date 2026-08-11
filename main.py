@@ -1,4 +1,4 @@
-from sudachipy import dictionary, tokenizer
+from sudachipy import dictionary
 
 dict_obj = dictionary.Dictionary()
 
@@ -10,3 +10,4 @@ listOfSomeSorts = tokenizer_obj.tokenize(raw_text)
 for m in listOfSomeSorts :
     print(f"Instance in the sentence {m.surface()}")
     print(f"Dictionary form: {m.dictionary_form()}")
+    print(f"Part of Speech: {m.part_of_speech()[0]}")
