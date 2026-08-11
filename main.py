@@ -8,4 +8,5 @@ raw_text ="私はせっかちでごめん、ただ話したいなの"
 listOfSomeSorts = tokenizer_obj.tokenize(raw_text)
 
 for m in listOfSomeSorts :
-    print(m)
+    print(f"Instance in the sentence {m.surface()}")
+    print(f"Dictionary form: {m.dictionary_form()}")
