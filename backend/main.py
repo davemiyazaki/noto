@@ -10,9 +10,16 @@
 #    print(wordInstance)
 
 from fastapi import FastAPI
+from pydantic import BaseModel
 
 app = FastAPI()
 
-@app.post("/")
-async def root():
-    return {"message":"Hello World using POST"}
+class className(BaseModel):
+    var: str
+
+
+
+@app.post("/", response_model=className)
+async def count_words(raw_text:str):
+    array_words = raw_text.split()
+    return{"var":f"{len(array_words)}"}
