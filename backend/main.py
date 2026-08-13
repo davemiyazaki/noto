@@ -19,7 +19,7 @@ class className(BaseModel):
 
 
 
-@app.post("/", response_model=className)
+@app.post("/echo", response_model=className)
 async def count_words(raw_text:str):
     array_words = raw_text.split()
     return{"var":f"{len(array_words)}"}
