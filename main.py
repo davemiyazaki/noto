@@ -8,3 +8,11 @@
 
 #    wordInstance =[m.surface(), m.dictionary_form(), m.part_of_speech()]
 #    print(wordInstance)
+
+from fastapi import FastAPI
+
+app = FastAPI()
+
+@app.get("/")
+async def root():
+    return {"message":"Hello World"}
