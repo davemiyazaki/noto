@@ -13,6 +13,6 @@ from fastapi import FastAPI
 
 app = FastAPI()
 
-@app.get("/")
+@app.post("/")
 async def root():
-    return {"message":"Hello World"}
+    return {"message":"Hello World using POST"}
