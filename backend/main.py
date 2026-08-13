@@ -15,6 +15,7 @@ from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI()
 
+
 class className(BaseModel):
     var: str
 
