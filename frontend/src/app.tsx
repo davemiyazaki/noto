@@ -1,22 +1,19 @@
-import { MetaProvider, Title } from "@solidjs/meta";
-import { Router } from "@solidjs/router";
-import { FileRoutes } from "@solidjs/start/router";
-import { Suspense } from "solid-js";
-import "./app.css";
+//import { Router } from "@solidjs/router";
+//import "./app.css";
+import { createSignal } from "solid-js";
 
 export default function App() {
+
+  const [rawText, setRawText] = createSignal<string>("")
+
   return (
-    <Router
-      root={props => (
-        <MetaProvider>
-          <Title>SolidStart - Basic</Title>
-          <a href="/">Index</a>
-          <a href="/about">About</a>
-          <Suspense>{props.children}</Suspense>
-        </MetaProvider>
-      )}
-    >
-      <FileRoutes />
-    </Router>
+    <div class="main">
+      <div class="text">Hello World</div>
+      <input
+        type="text"
+        onInput={(e: InputEvent & { target: HTMLInputElement }) => setRawText(e.target.value)}
+        placeholder="Raw Text"
+        />
+    </div>
   );
 }
