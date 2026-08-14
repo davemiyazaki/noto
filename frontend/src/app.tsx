@@ -36,7 +36,7 @@ export default function App() {
         onInput={(e: InputEvent & { target: HTMLInputElement }) => setRawText(e.target.value)}
         placeholder="Raw Text"
       />
-      <button onClick={sendText()}>Send</button>
+      <button onClick={sendText}>Send</button>
     </div>
   );
 }
