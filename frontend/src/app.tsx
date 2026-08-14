@@ -16,7 +16,7 @@ export default function App() {
   const [serverResponse, setServerResponse] = createSignal < ItemResponse | null >(null)
   async function sendText(): Promise<void> {
     try {
-      const res = await fetch("http:localhost:8000/echo", {
+      const res = await fetch("http://localhost:8000/echo", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ var: rawText() }),
