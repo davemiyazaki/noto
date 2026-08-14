@@ -3,10 +3,8 @@
 import { createSignal } from "solid-js";
 
 interface ItemResponse {
-  message: string;
-  data: {
-    var: string;
-  }
+  detail: string;
+  var: string;
 }
 
 
