@@ -29,14 +29,17 @@ app.add_middleware(
 )
 
 
-class className(BaseModel):
+class Request(BaseModel):
+    var:str
+
+class Response(BaseModel):
     detail:str
     var: str
 
 
 
-@app.post("/echo", response_model=className)
-async def count_words(raw_text:className):
+@app.post("/echo", response_model=Response)
+async def count_words(raw_text:Request):
     rawText = raw_text.var
     array_words = rawText.split()
     return{"detail":"Successful parsing", "var":f"{len(array_words)}"}

@@ -3,8 +3,8 @@
 import { createSignal } from "solid-js";
 
 interface ItemResponse {
-  detail: string;
-  var: string;
+  detail: string,
+  var: string
 }
 
 
@@ -37,7 +37,7 @@ export default function App() {
       />
       <button onClick={sendText}>Send</button>
 
-      <div>Response: {serverResponse()?.data["var"] && <p>{serverResponse()?.message}</p>}</div>
+      <div>Response: {serverResponse()?.var && <p>{serverResponse()?.detail}</p>}</div>
     </div>
   );
 }
