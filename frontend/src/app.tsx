@@ -20,9 +20,9 @@ export default function App() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ var: rawText() }),
       });
+    } catch (error) {
+      console.error("Submission failed", error);
     }
-
-    c
   }
   return (
     <div class="main">
