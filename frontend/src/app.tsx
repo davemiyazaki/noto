@@ -23,6 +23,7 @@ export default function App() {
       });
 
       const data: ItemResponse = await res.json();
+      setServerResponse(data);
     } catch (error) {
       console.error("Submission failed", error);
     }
