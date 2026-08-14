@@ -37,6 +37,8 @@ export default function App() {
         placeholder="Raw Text"
       />
       <button onClick={sendText}>Send</button>
+
+      <div>Response: </div>
     </div>
   );
 }
