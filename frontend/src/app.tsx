@@ -13,6 +13,7 @@ interface ItemResponse {
 export default function App() {
 
   const [rawText, setRawText] = createSignal<string>("")
+  const [serverResponse, setServerResponse] = createSignal < ItemResponse | null >(null)
   async function sendText(): Promise<void> {
     try {
       const res = await fetch("http:localhost:8000/echo/", {
@@ -20,6 +21,8 @@ export default function App() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ var: rawText() }),
       });
+
+      const data: ItemResponse = await res.json();
     } catch (error) {
       console.error("Submission failed", error);
     }
