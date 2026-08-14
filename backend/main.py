@@ -42,4 +42,4 @@ class Response(BaseModel):
 async def count_words(raw_text:Request):
     rawText = raw_text.var
     array_words = rawText.split()
-    return{"detail":"", "var":f"{len(array_words)}"}
+    return{"detail":"Successful counting!", "var":f"{len(array_words)}"}
