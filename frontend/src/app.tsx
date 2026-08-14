@@ -38,7 +38,7 @@ export default function App() {
       />
       <button onClick={sendText}>Send</button>
 
-      <div>Response: </div>
+      <div>Response: {serverResponse() && <p>{serverResponse()?.message}</p>}</div>
     </div>
   );
 }
