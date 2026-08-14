@@ -30,6 +30,7 @@ app.add_middleware(
 
 
 class className(BaseModel):
+    detail:str
     var: str
 
 
@@ -38,4 +39,4 @@ class className(BaseModel):
 async def count_words(raw_text:className):
     rawText = raw_text.var
     array_words = rawText.split()
-    return{"var":f"{len(array_words)}"}
+    return{"detail":"Successful parsing", "var":f"{len(array_words)}"}
