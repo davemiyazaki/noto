@@ -7,7 +7,7 @@ tokenizer = Dictionary().create()
 
 def analyzeText(userInput:str):
     wordsList = createReadableTokenizedText(rawText=userInput)
-    
+    resultDict = calculateWordFrequency(wordsList)    
 
 
 def createReadableTokenizedText(rawText:str):
@@ -17,11 +17,19 @@ def createReadableTokenizedText(rawText:str):
 
     return morpheme_list;
 
+def calculateWordFrequency(wordList:list[str]):
+    #create pure list of counting using uniqness rules of dictionaries
+    initialValue: int = 0
+    wordDictionary = dict.fromkeys(wordList, initialValue)
+    wordDictionaryItems = wordDictionary.keys() 
+
+    for i in range(len(wordDictionaryItems)):
+        frequencyCount = wordList.count(wordDictionaryItems[i])
+        wordDictionary[wordDictionaryItems[i]] = frequencyCount
+
+    return wordDictionary
+
+
 def __debug(text:str):
-    morphemes = tokenizer.tokenize(text, SplitMode.A)
-
-    #morpheme_list = list(morphemes)
-
-    print(morphemes.size())
 
 
