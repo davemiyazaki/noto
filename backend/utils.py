@@ -8,7 +8,7 @@ rawText = "空が好きだ"
 
 
 def tokenizeText(rawText:str):
-    morphemes = tokenizer.tokenize(text, SplitMode.A)
+    morphemes = tokenizer.tokenize(rawText, SplitMode.A)
 
     #morpheme_list = list(morphemes)
 
