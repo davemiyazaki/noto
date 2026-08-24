@@ -31,11 +31,11 @@ app.add_middleware(
 
 
 class RequestItem(BaseModel):
-    var:str
+    val:str
 
 class ResponseItem(BaseModel):
     detail:str
-    var: str
+    val: str
 
 
 
@@ -45,5 +45,5 @@ class ResponseItem(BaseModel):
 @app.post("/echo", response_model=ResponseItem)
 async def count_words(raw_text:RequestItem):
 
-    wordAmount = tokenizeText(rawText=raw_text.var)
-    return{"detail":"Successful counting!", "var":f"{wordAmount}"}
+    wordAmount = tokenizeText(rawText=raw_text.val)
+    return{"detail":"Successful counting!", "val":f"{wordAmount}"}

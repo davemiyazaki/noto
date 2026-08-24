@@ -4,7 +4,7 @@ import { createSignal } from "solid-js";
 
 interface ItemResponse {
   detail: string,
-  var: string
+  val: string
 }
 
 
@@ -19,7 +19,7 @@ export default function App() {
       const res = await fetch("http://localhost:8000/echo/", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ var: rawText() }),
+        body: JSON.stringify({ val: rawText() }),
 
       });
 
@@ -46,7 +46,7 @@ export default function App() {
 
       <button onClick={sendText}>Send</button>
 
-      <div>Word Amount: {serverResponse()?.var}</div>
+      <div>Word Amount: {serverResponse()?.val}</div>
 
     </div>
   );
