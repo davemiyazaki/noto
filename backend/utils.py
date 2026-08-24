@@ -8,10 +8,15 @@ text = "空が好きだ"
 
 morphemes = tokenizer.tokenize(text, SplitMode.A)
 
-for m in morphemes:
-    print(f"Surface: {m.surface()}")
-    print(f"POS: {m.part_of_speech()}")
-    print(f"Dictionary Form: {m.dictionary_form()}")
+morpheme_list = list(morphemes)
+
+print(morphemes)
+print(len(morphemes))
+
+#for m in morphemes:
+ #   print(f"Surface: {m.surface()}")
+  #  print(f"POS: {m.part_of_speech()}")
+   # print(f"Dictionary Form: {m.dictionary_form()}")
 
 
 
