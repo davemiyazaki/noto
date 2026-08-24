@@ -7,7 +7,9 @@ tokenizer = Dictionary().create()
 
 def analyzeText(userInput:str):
     wordsList = createReadableTokenizedText(rawText=userInput)
-    resultDict = calculateWordFrequency(wordsList)    
+    resultDict = calculateWordFrequency(wordsList) 
+
+    return resultDict   
 
 
 def createReadableTokenizedText(rawText:str):
@@ -31,5 +33,6 @@ def calculateWordFrequency(wordList:list[str]):
 
 
 def __debug(text:str):
+   print(analyzeText) 
 
-
+__debug()
