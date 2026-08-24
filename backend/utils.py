@@ -4,8 +4,6 @@ from sudachipy import Dictionary, SplitMode
 
 tokenizer = Dictionary().create()
 
-rawText = "空が好きだ"
-
 
 def analyzeText(userInput:str):
     wordsList = createReadableTokenizedText(rawText=userInput)
