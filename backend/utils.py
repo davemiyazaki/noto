@@ -9,7 +9,7 @@ def analyzeText(userInput:str):
     wordsList = createReadableTokenizedText(rawText=userInput)
     resultDict = calculateWordFrequency(wordsList) 
 
-    return resultDict   
+    return [resultDict, wordsList]  #returning dict and list 
 
 
 def createReadableTokenizedText(rawText:str):
@@ -44,4 +44,4 @@ def __debug():
    print(analyzeText("李も桃も桃のうち")) 
 
 
-__debug()
+#__debug()
