@@ -3,9 +3,9 @@
 import { createSignal } from "solid-js";
 
 interface ItemResponse {
-  detail: string,
-  tokenizedText: string[]
-  frequencyAnalysis: Record<string, number> 
+  detail: string;
+  tokenizedText: string[];
+  frequencyAnalysis: Record<string, number>;
 }
 
 
