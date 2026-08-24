@@ -35,9 +35,8 @@ class RequestItem(BaseModel):
 
 class ResponseItem(BaseModel):
     detail:str
-    val: str
-
-
+    tokenizedText: dict
+    frequencyList: list[str]    
 
 
 
