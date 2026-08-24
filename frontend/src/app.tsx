@@ -10,10 +10,12 @@ interface ItemResponse {
 
 export default function App() {
 
+  let inputRef!: HTMLInputElement;
   const [rawText, setRawText] = createSignal<string>("")
   const [serverResponse, setServerResponse] = createSignal < ItemResponse | null >(null)
 
   async function sendText(): Promise<void> {
+    setRawText(inputRef.value);
     try {
 
       const res = await fetch("http://localhost:8000/echo/", {
@@ -39,9 +41,11 @@ export default function App() {
 
       <input
         type="text"
-        onInput={(e: InputEvent & { target: HTMLInputElement }) => setRawText(e.target.value)}
+        ref={inputRef}
+//        onInput={(e: InputEvent & { target: HTMLInputElement }) => setRawText(e.target.value)}
         placeholder="Raw Text"
         autocomplete="off"
+        value={"空が好きだ"}
       />
 
       <button onClick={sendText}>Send</button>
