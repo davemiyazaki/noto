@@ -6,17 +6,21 @@ tokenizer = Dictionary().create()
 
 text = "空が好きだ"
 
-morphemes = tokenizer.tokenize(text, SplitMode.A)
 
-morpheme_list = list(morphemes)
+def tokenizeText(rawText:str):
+    morphemes = tokenizer.tokenize(text, SplitMode.a)
 
-print(morphemes)
-print(len(morphemes))
 
-#for m in morphemes:
- #   print(f"Surface: {m.surface()}")
-  #  print(f"POS: {m.part_of_speech()}")
-   # print(f"Dictionary Form: {m.dictionary_form()}")
+    
+    morpheme_list = list(morphemes)
+    return len (morpheme_list)
+
+def __debug(text:str):
+    morphemes = tokenizer.tokenize(text, SplitMode.a)
+
+    #morpheme_list = list(morphemes)
+
+    print(morphemes.size())
 
 
 
