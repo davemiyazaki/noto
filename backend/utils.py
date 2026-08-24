@@ -9,7 +9,7 @@ def analyzeText(userInput:str):
     tokenizedText = createReadableTokenizedText(rawText=userInput)
     frequencyAnalysis = calculateWordFrequency(tokenizedText) 
 
-    return {"text":tokenizedText, "frequencyAnalysis":frequencyAnalysis}  #returning dict and list 
+    return {"text":tokenizedText, "frequency":frequencyAnalysis}  #returning dict and list 
 
 
 def createReadableTokenizedText(rawText:str):
