@@ -51,7 +51,7 @@ export default function App() {
 
       <button onClick={sendText}>Send</button>
 
-      <div>Word Amount: {serverResponse()?.val}</div>
+      <div>Server Response: {serverResponse()?.tokenizedText}</div>
 
     </div>
   );
