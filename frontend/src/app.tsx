@@ -28,7 +28,7 @@ export default function App() {
   }
   return (
     <div class="main">
-      <div class="text">Hello World</div>
+      <div class="text">Please paste/enter Japanese text</div>
       <input
         type="text"
         onInput={(e: InputEvent & { target: HTMLInputElement }) => setRawText(e.target.value)}
