@@ -38,9 +38,6 @@ class ResponseItem(BaseModel):
 
 
 
-
-
-
 @app.post("/echo", response_model=ResponseItem)
 async def count_words(raw_text:RequestItem):
     rawText = raw_text.var
