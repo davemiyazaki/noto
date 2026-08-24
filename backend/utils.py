@@ -10,10 +10,9 @@ rawText = "空が好きだ"
 def tokenizeText(rawText:str):
     morphemes = tokenizer.tokenize(text, SplitMode.A)
 
+    #morpheme_list = list(morphemes)
 
-    
-    morpheme_list = list(morphemes)
-    return len (morpheme_list)
+    return morphemes.size()
 
 def __debug(text:str):
     morphemes = tokenizer.tokenize(text, SplitMode.A)
