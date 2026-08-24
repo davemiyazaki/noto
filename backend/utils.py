@@ -8,7 +8,7 @@ rawText = "空が好きだ"
 
 
 def analyzeText(userInput:str):
-    worsList = createReadableTokenizedText(rawText=userInput)
+    wordsList = createReadableTokenizedText(rawText=userInput)
     
 
 
