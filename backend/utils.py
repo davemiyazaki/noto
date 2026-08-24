@@ -41,7 +41,8 @@ def calculateWordFrequency(wordList:list[str]):
 
 
 def __debug():
-   print(analyzeText("李も桃も桃のうち")) 
+  someDict = analyzeText("李も桃も桃のうち")
+  print(f"some sort of dictionary that contains: {someDict["text"]}")
 
 
 #__debug()

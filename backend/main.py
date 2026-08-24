@@ -34,8 +34,8 @@ class RequestItem(BaseModel):
 
 class ResponseItem(BaseModel):
     detail:str
-    tokenizedText: dict
-    frequencyAnalysis: list[str]    
+    tokenizedText: list[str]
+    frequencyAnalysis: dict[str : int]   
 
 
 
@@ -44,4 +44,4 @@ class ResponseItem(BaseModel):
 async def count_words(raw_text:RequestItem):
 
     analysisResponse = analyzeText(raw_text.val)
-    return{"detail":"Successful counting!", "tokenizedText":f"{analysisResponse["text"]}", "frequencyAnalysis":f"{analysisResponse["dict"]}"}
+    return{"detail":"Successful counting!", "tokenizedText":analysisResponse["text"], "frequenceAnalysis":analysisResponse["frequency"]}

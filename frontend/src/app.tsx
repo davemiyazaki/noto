@@ -4,8 +4,8 @@ import { createSignal } from "solid-js";
 
 interface ItemResponse {
   detail: string,
-  tokenizedText: string
-  frequencyAnalysis: string
+  tokenizedText: string[]
+ // frequencyAnalysis: string
 }
 
 
@@ -28,6 +28,7 @@ export default function App() {
 
       const data: ItemResponse = await res.json();
       setServerResponse(data);
+      console.log(data);
 
     } catch (error) {
 
