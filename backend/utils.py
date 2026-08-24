@@ -32,7 +32,7 @@ def calculateWordFrequency(wordList:list[str]):
     return wordDictionary
 
 
-def __debug(text:str):
+def __debug():
    print(analyzeText) 
 
 __debug()
