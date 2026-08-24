@@ -4,11 +4,11 @@ from sudachipy import Dictionary, SplitMode
 
 tokenizer = Dictionary().create()
 
-text = "空が好きだ"
+rawText = "空が好きだ"
 
 
 def tokenizeText(rawText:str):
-    morphemes = tokenizer.tokenize(text, SplitMode.a)
+    morphemes = tokenizer.tokenize(text, SplitMode.A)
 
 
     
@@ -16,7 +16,7 @@ def tokenizeText(rawText:str):
     return len (morpheme_list)
 
 def __debug(text:str):
-    morphemes = tokenizer.tokenize(text, SplitMode.a)
+    morphemes = tokenizer.tokenize(text, SplitMode.A)
 
     #morpheme_list = list(morphemes)
 
@@ -24,3 +24,4 @@ def __debug(text:str):
 
 
 
+__debug(rawText)
