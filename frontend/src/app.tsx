@@ -37,7 +37,7 @@ export default function App() {
       />
       <button onClick={sendText}>Send</button>
 
-      <div>Response: {serverResponse()?.var}</div>
+      <div>Word Amount: {serverResponse()?.var}</div>
     </div>
   );
 }
