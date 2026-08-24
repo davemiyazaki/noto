@@ -5,7 +5,7 @@ import { createSignal } from "solid-js";
 interface ItemResponse {
   detail: string,
   tokenizedText: string[]
- // frequencyAnalysis: string
+  frequencyAnalysis: Record<string, number> 
 }
 
 
