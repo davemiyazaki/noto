@@ -15,7 +15,12 @@ def analyzeText(userInput:str):
 def createReadableTokenizedText(rawText:str):
     morphemes = tokenizer.tokenize(rawText, SplitMode.A)
 
-    morpheme_list = list(morphemes)
+    morpheme_list = []
+    for i in range(morphemes.size()):
+        morpheme_list.append(morphemes[i].dictionary_form())
+
+    # DEBUG 
+    #print(f"LIST OF MORPHEMES IS {morpheme_list} ")
 
     return morpheme_list;
 
@@ -23,7 +28,10 @@ def calculateWordFrequency(wordList:list[str]):
     #create pure list of counting using uniqness rules of dictionaries
     initialValue: int = 0
     wordDictionary = dict.fromkeys(wordList, initialValue)
-    wordDictionaryItems = wordDictionary.keys() 
+    wordDictionaryItems = list(wordDictionary.keys())
+
+    # DEBUG 
+    #print(f"LIST OF WORD DICTIONARY KEYS IS {wordDictionaryItems} ")
 
     for i in range(len(wordDictionaryItems)):
         frequencyCount = wordList.count(wordDictionaryItems[i])
@@ -33,6 +41,7 @@ def calculateWordFrequency(wordList:list[str]):
 
 
 def __debug():
-   print(analyzeText("空が好きだ")) 
+   print(analyzeText("李も桃も桃のうち")) 
+
 
 __debug()
