@@ -33,6 +33,6 @@ def calculateWordFrequency(wordList:list[str]):
 
 
 def __debug():
-   print(analyzeText) 
+   print(analyzeText("空が好きだ")) 
 
 __debug()
