@@ -22,5 +22,3 @@ def __debug(text:str):
     print(morphemes.size())
 
 
-
-__debug(rawText)
