@@ -7,12 +7,17 @@ tokenizer = Dictionary().create()
 rawText = "空が好きだ"
 
 
-def tokenizeText(rawText:str):
+def analyzeText(userInput:str):
+    worsList = createReadableTokenizedText(rawText=userInput)
+    
+
+
+def createReadableTokenizedText(rawText:str):
     morphemes = tokenizer.tokenize(rawText, SplitMode.A)
 
-    #morpheme_list = list(morphemes)
+    morpheme_list = list(morphemes)
 
-    return morphemes.size()
+    return morpheme_list;
 
 def __debug(text:str):
     morphemes = tokenizer.tokenize(text, SplitMode.A)

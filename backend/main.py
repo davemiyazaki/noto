@@ -12,7 +12,7 @@
 from fastapi import FastAPI
 from pydantic import BaseModel
 from fastapi.middleware.cors import CORSMiddleware
-from backend.utils import tokenizeText
+from backend.utils import createReadableTokenizedText
 
 app = FastAPI()
 
@@ -45,5 +45,5 @@ class ResponseItem(BaseModel):
 @app.post("/echo", response_model=ResponseItem)
 async def count_words(raw_text:RequestItem):
 
-    wordAmount = tokenizeText(rawText=raw_text.val)
+    wordAmount = createReadableTokenizedText(rawText=raw_text.val)
     return{"detail":"Successful counting!", "val":f"{wordAmount}"}
