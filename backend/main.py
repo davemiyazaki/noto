@@ -12,6 +12,7 @@
 from fastapi import FastAPI
 from pydantic import BaseModel
 from fastapi.middleware.cors import CORSMiddleware
+from backend.utils import tokenizeText
 
 app = FastAPI()
 
@@ -43,6 +44,6 @@ class ResponseItem(BaseModel):
 
 @app.post("/echo", response_model=ResponseItem)
 async def count_words(raw_text:RequestItem):
-    rawText = raw_text.var
-    array_words = rawText.split()
-    return{"detail":"Successful counting!", "var":f"{len(array_words)}"}
+
+    wordAmount = tokenizeText(rawText=raw_text.var)
+    return{"detail":"Successful counting!", "var":f"{wordAmount}"}
