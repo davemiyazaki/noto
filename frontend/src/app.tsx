@@ -1,5 +1,4 @@
 import { createSignal, For} from "solid-js";
-import { searchForWorkspaceRoot } from "vite";
 
 interface ItemResponse {
   detail: string;

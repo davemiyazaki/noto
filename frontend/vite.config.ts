@@ -1,11 +1,9 @@
 import { defineConfig } from "vite";
-import { nitro } from "nitro/vite";
+import solidPlugin from "vite-plugin-solid"
 import { vanillaExtractPlugin} from '@vanilla-extract/vite-plugin'
-import { solidStart } from "@solidjs/start/config";
 
 export default defineConfig({
-  plugins: [solidStart(),
-    nitro(),
+  plugins: [solidPlugin(),
     vanillaExtractPlugin()
   ]
 });
