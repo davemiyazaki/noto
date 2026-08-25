@@ -1,6 +1,0 @@
-pyproject.toml
-backend/noto.egg-info/PKG-INFO
-backend/noto.egg-info/SOURCES.txt
-backend/noto.egg-info/dependency_links.txt
-backend/noto.egg-info/requires.txt
-backend/noto.egg-info/top_level.txt
