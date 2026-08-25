@@ -1,6 +1,7 @@
 //import { Router } from "@solidjs/router";
 //import "./app.css";
-import { createSignal } from "solid-js";
+import { createSignal, For} from "solid-js";
+import { searchForWorkspaceRoot } from "vite";
 
 interface ItemResponse {
   detail: string;
@@ -8,6 +9,25 @@ interface ItemResponse {
   frequencyAnalysis: Record<string, number>;
 }
 
+
+type FrequencyCount = {
+  words : Record<string, number>;
+}
+
+function ItemList(props: FrequencyCount){
+  return(
+  <div>
+      <For each={Object.entries(props.words)}> 
+      {([key, value]) => (
+        <div>
+          <span>{key}</span>
+          <span>{value}</span>
+        </div> 
+        )
+      }
+      </For> 
+  </div>)
+}
 
 export default function App() {
 
@@ -37,6 +57,7 @@ export default function App() {
 
   }
 
+
   return (
     <div class="main">
       <div class="text">Please paste/enter Japanese text</div>
@@ -54,6 +75,12 @@ export default function App() {
 
       <div>Server Response: {serverResponse()?.tokenizedText}</div>
 
+      <ItemList 
+        words={
+          serverResponse()?.frequencyAnalysis 
+          ?? {"":0}
+        }
+      />
     </div>
   );
 }
