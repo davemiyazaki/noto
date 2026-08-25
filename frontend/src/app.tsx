@@ -1,5 +1,3 @@
-//import { Router } from "@solidjs/router";
-//import "./app.css";
 import { createSignal, For} from "solid-js";
 import { searchForWorkspaceRoot } from "vite";
 
