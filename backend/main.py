@@ -12,7 +12,7 @@
 from fastapi import FastAPI
 from pydantic import BaseModel
 from fastapi.middleware.cors import CORSMiddleware
-from backend.utils import analyzeText
+from utils import analyzeText
 
 app = FastAPI()
 
