@@ -1,5 +1,5 @@
 import { createSignal, For} from "solid-js";
-
+import * as Sss from "./style.css"
 interface ItemResponse {
   detail: string;
   tokenizedText: string[];
@@ -58,7 +58,7 @@ export default function App() {
 
 
   return (
-    <div class="main">
+    <div class={Sss.flexCenteredContainer}>
       <div class="text">Please paste/enter Japanese text</div>
 
       <input

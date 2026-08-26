@@ -1,7 +1,7 @@
 import {style} from '@vanilla-extract/css'
 
 
-const flexCenteredContainer = style({
+export const flexCenteredContainer = style({
   display: 'flex', 
   alignItems: 'center',
   justifyContent: 'center',
