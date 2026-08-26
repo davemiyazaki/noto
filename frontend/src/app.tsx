@@ -26,6 +26,8 @@ function ItemList(props: FrequencyCount){
   </div>)
 }
 
+
+
 export default function App() {
 
   let inputRef!: HTMLInputElement;

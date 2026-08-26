@@ -3,7 +3,12 @@ import solidPlugin from "vite-plugin-solid"
 import { vanillaExtractPlugin} from '@vanilla-extract/vite-plugin'
 
 export default defineConfig({
-  plugins: [solidPlugin(),
-    vanillaExtractPlugin()
-  ]
+  plugins: [
+    vanillaExtractPlugin(),
+    solidPlugin(),
+  ],
+  server: {
+    port:3000,
+    hmr:true
+  }
 });
