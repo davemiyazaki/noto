@@ -61,16 +61,18 @@ export default function App() {
     <div class={Sss.flexCenteredContainer}>
       <div class="text">Please paste/enter Japanese text</div>
 
-      <input
-        type="text"
-        name="userInput"
-        ref={inputRef}
-        placeholder="Raw Text"
-        autocomplete="off"
-        value={"空が好きだ"}
-      />
+      <div class={Sss.userInput}>
+        <input
+          type="text"
+          name="userInput"
+          ref={inputRef}
+          placeholder="Raw Text"
+          autocomplete="off"
+          value={"空が好きだ"}
+        />
 
-      <button onClick={sendText}>Send</button>
+        <button onClick={sendText}>Send</button>
+      </div>
 
       <div>Server Response: {serverResponse()?.tokenizedText}</div>
 
