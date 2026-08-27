@@ -58,7 +58,7 @@ export default function App() {
 
 
   return (
-    <div class={Sss.flexCenteredContainer}>
+    <div class={Sss.mainDiv}>
       <div class="text">Please paste/enter Japanese text</div>
 
       <div class={Sss.userInput}>

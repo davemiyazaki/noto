@@ -1,7 +1,7 @@
 import {style} from '@vanilla-extract/css'
 
 
-export const flexCenteredContainer = style({
+export const mainDiv = style({
   display: 'flex',
   flexDirection:'column',
   alignItems: 'center',
