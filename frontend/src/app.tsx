@@ -1,4 +1,4 @@
-import { createSignal, For} from "solid-js";
+import { createSignal, For, Show} from "solid-js";
 import * as Sss from "./style.css"
 interface ItemResponse {
   detail: string;
@@ -26,6 +26,11 @@ function ItemList(props: FrequencyCount){
   </div>)
 }
 
+function ComponentA() {
+  return (
+    <div>Hello World!</div>
+  )
+}
 
 
 export default function App() {
@@ -33,6 +38,7 @@ export default function App() {
   let inputRef!: HTMLInputElement;
   const [rawText, setRawText] = createSignal<string>("")
   const [serverResponse, setServerResponse] = createSignal < ItemResponse | null >(null)
+  const [triggerAnalyzedText, setTriggerAnalyzedText] = createSignal<boolean>(false)
 
   async function sendText(): Promise<void> {
     setRawText(inputRef.value);
@@ -53,7 +59,7 @@ export default function App() {
 
       console.error("Submission failed", error);
     }
-
+    setTriggerAnalyzedText(true);
   }
 
 
@@ -61,27 +67,25 @@ export default function App() {
     <div class={Sss.mainDiv}>
       <div class="text">Please paste/enter Japanese text</div>
 
-      <div class={Sss.userInput}>
-        <input
-          type="text"
-          name="userInput"
-          ref={inputRef}
-          placeholder="Raw Text"
-          autocomplete="off"
-          value={"空が好きだ"}
-        />
-
-        <button onClick={sendText}>Send</button>
-      </div>
-
+      <Show when={!triggerAnalyzedText()} fallback={ <ComponentA/>}>
+        <div class={Sss.userInput}>
+          <input
+            type="text"
+            name="userInput"
+            ref={inputRef}
+            placeholder="Raw Text"
+            autocomplete="off"
+            value={"空が好きだ"}
+          />
+          <button onClick={sendText}>Send</button>
+        </div>
+      </Show>
       <div>Server Response: {serverResponse()?.tokenizedText}</div>
-
-      <ItemList
-        words={
-          serverResponse()?.frequencyAnalysis
-          ?? {"":0}
-        }
-      />
+      <ItemList words={
+        serverResponse()?.frequencyAnalysis
+        ?? { "": 0 }
+      }
+    />
     </div>
   );
 }
