@@ -26,9 +26,8 @@ function ItemList(props: FrequencyCount){
   </div>)
 }
 
-function ComponentA(props: { text: string[]}){
+function ComponentA(props: { text: string[] | null}){
   return (
-
     <div>Server Response: {props.text}</div>
   )
 }
@@ -67,7 +66,7 @@ export default function App() {
   return (
     <div class={Sss.mainDiv}>
       <div class="text">Please paste/enter Japanese text</div>
-      <Show when={!triggerAnalyzedText()} fallback={<ComponentA text={["hello"]} />}>
+      <Show when={!triggerAnalyzedText()} fallback={<ComponentA text={serverResponse()!.tokenizedText} />}>
         <div class={Sss.userInput}>
           <input
             type="text"
