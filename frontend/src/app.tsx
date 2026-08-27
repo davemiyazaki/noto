@@ -27,10 +27,14 @@ function ItemList(props: FrequencyCount){
 }
 
 function ComponentA(props: { text: string[]}){
+  for (let i = 0; i < props.text.length; i++) {
+    console.log(props.text[i]);
+  }
+
   return (
     <div>
-      <For each={Object.values(props.text)}>
-        {([item]) => (<span class={Sss.textItem}>{item}</span>)}
+      <For each={props.text}>
+        {(item) => (<span class={Sss.textItem}>{item}</span>)}
       </For>
     </div>
   )
