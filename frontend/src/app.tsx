@@ -14,15 +14,15 @@ type FrequencyCount = {
 function ItemList(props: FrequencyCount){
   return(
   <div>
-      <For each={Object.entries(props.words)}> 
+      <For each={Object.entries(props.words)}>
       {([key, value]) => (
         <div>
           <span>{key}</span>
           <span>{value}</span>
-        </div> 
+        </div>
         )
       }
-      </For> 
+      </For>
   </div>)
 }
 
@@ -63,6 +63,7 @@ export default function App() {
 
       <input
         type="text"
+        name="userInput"
         ref={inputRef}
 //        onInput={(e: InputEvent & { target: HTMLInputElement }) => setRawText(e.target.value)}
         placeholder="Raw Text"
@@ -74,9 +75,9 @@ export default function App() {
 
       <div>Server Response: {serverResponse()?.tokenizedText}</div>
 
-      <ItemList 
+      <ItemList
         words={
-          serverResponse()?.frequencyAnalysis 
+          serverResponse()?.frequencyAnalysis
           ?? {"":0}
         }
       />
