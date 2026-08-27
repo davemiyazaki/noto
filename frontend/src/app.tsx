@@ -30,7 +30,7 @@ function ComponentA(props: { text: string[]}){
   return (
     <div>
       <For each={Object.values(props.text)}>
-        {([item]) => (<span>{item}</span>)}
+        {([item]) => (<span class={Sss.textItem}>{item}</span>)}
       </For>
     </div>
   )
