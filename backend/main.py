@@ -7,7 +7,7 @@
 #for m in listOfSomeSorts :
 
 #    wordInstance =[m.surface(), m.dictionary_form(), m.part_of_speech()]
-#    print(wordInstance)
+   # print(wordInstance)
 
 from fastapi import FastAPI
 from pydantic import BaseModel
@@ -36,7 +36,7 @@ class RequestItem(BaseModel):
 class ResponseItem(BaseModel):
     detail:str
     tokenizedText: list[str]
-    frequencyAnalysis: dict[str, int]   
+    frequencyAnalysis: dict[str, int]
 
 
 
