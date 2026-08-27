@@ -26,9 +26,10 @@ function ItemList(props: FrequencyCount){
   </div>)
 }
 
-function ComponentA() {
+function ComponentA(props: { text: string[]}){
   return (
-    <div>Hello World!</div>
+
+    <div>Server Response: {props.text}</div>
   )
 }
 
@@ -66,8 +67,7 @@ export default function App() {
   return (
     <div class={Sss.mainDiv}>
       <div class="text">Please paste/enter Japanese text</div>
-
-      <Show when={!triggerAnalyzedText()} fallback={ <ComponentA/>}>
+      <Show when={!triggerAnalyzedText()} fallback={<ComponentA text={["hello"]} />}>
         <div class={Sss.userInput}>
           <input
             type="text"
@@ -77,15 +77,13 @@ export default function App() {
             autocomplete="off"
             value={"空が好きだ"}
           />
+          </div>
           <button onClick={sendText}>Send</button>
-        </div>
       </Show>
-      <div>Server Response: {serverResponse()?.tokenizedText}</div>
       <ItemList words={
         serverResponse()?.frequencyAnalysis
         ?? { "": 0 }
-      }
-    />
+      }/>
     </div>
   );
 }
