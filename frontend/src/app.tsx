@@ -26,9 +26,13 @@ function ItemList(props: FrequencyCount){
   </div>)
 }
 
-function ComponentA(props: { text: string[] | null}){
+function ComponentA(props: { text: string[]}){
   return (
-    <div>Server Response: {props.text}</div>
+    <div>
+      <For each={Object.values(props.text)}>
+        {([item]) => (<span>{item}</span>)}
+      </For>
+    </div>
   )
 }
 
