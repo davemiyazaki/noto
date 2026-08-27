@@ -65,7 +65,6 @@ export default function App() {
         type="text"
         name="userInput"
         ref={inputRef}
-//        onInput={(e: InputEvent & { target: HTMLInputElement }) => setRawText(e.target.value)}
         placeholder="Raw Text"
         autocomplete="off"
         value={"空が好きだ"}
