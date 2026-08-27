@@ -23,3 +23,11 @@ export const textItem = style({
     backgroundColor: '#FFC7A2'
   }
 })
+
+export const inputField = style({
+  fieldSizing: 'content',
+  padding: '10px',
+  minWidth: '250px',
+  minHeight: 'auto',
+  maxWidth: '500px'
+})

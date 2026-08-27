@@ -77,6 +77,7 @@ export default function App() {
       <Show when={!triggerAnalyzedText()} fallback={<ComponentA text={serverResponse()!.tokenizedText} />}>
         <div class={Sss.userInput}>
           <input
+            class={Sss.inputField}
             type="text"
             name="userInput"
             ref={inputRef}
