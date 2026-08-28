@@ -2,6 +2,7 @@ import {style} from '@vanilla-extract/css'
 
 
 export const mainDiv = style({
+  backgroundImage:'url(/p6.webp)',
   display: 'flex',
   flexDirection:'column',
   rowGap:'10px',
