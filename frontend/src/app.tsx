@@ -85,7 +85,7 @@ export default function App() {
     <div
       class={Sss.mainDiv}
     >
-      <div class="text">Please paste/enter Japanese text</div>
+      <div class="text">Enter Japanese text</div>
       <Show when={!triggerAnalyzedText()} fallback={<ComponentA text={serverResponse()!.tokenizedText} frequencyList={serverResponse()!.frequencyAnalysis} goBack={() => setTriggerAnalyzedText(false)} />}>
         <div class={Sss.userInput}>
           <textarea
