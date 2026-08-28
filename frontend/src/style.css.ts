@@ -9,7 +9,6 @@ export const mainDiv = style({
   alignItems: 'center',
   justifyContent: 'center',
   height:'100vh'
-
 })
 
 
@@ -27,11 +26,12 @@ export const textItem = style({
 })
 
 export const inputField = style({
+  backgroundColor:'rgba(255,255,255,0.7)',
   fieldSizing: 'content',
   padding: '10px',
   minWidth: '250px',
   minHeight: 'auto',
   maxWidth: '500px',
   resize: 'none',
-  boxShadow:'0 0 18px -10px #919191 inset '
+  boxShadow:'0 0 18px -12px #919191 inset '
 })
