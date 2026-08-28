@@ -30,5 +30,6 @@ export const inputField = style({
   minWidth: '250px',
   minHeight: 'auto',
   maxWidth: '500px',
-  resize: 'none'
+  resize: 'none',
+  boxShadow:'0 0 18px -10px #919191 inset '
 })
