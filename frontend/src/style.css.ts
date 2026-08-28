@@ -4,6 +4,7 @@ import {style} from '@vanilla-extract/css'
 export const mainDiv = style({
   display: 'flex',
   flexDirection:'column',
+  rowGap:'10px',
   alignItems: 'center',
   justifyContent: 'center',
   height:'100vh'
