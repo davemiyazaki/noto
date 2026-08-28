@@ -38,5 +38,9 @@ export const inputField = style({
 
 
 export const wordBox = style({
-  backgroundColor: "blue",
+  border: "1px grey solid",
+  padding: "4px 8px",
+  marginBottom: "8px",
+  width:"fit-content"
+
 })
