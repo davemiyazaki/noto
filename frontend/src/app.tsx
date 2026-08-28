@@ -1,4 +1,4 @@
-import { createSignal, For, Show} from "solid-js";
+import { createSignal, For, Show, Setter} from "solid-js";
 import * as Sss from "./style.css"
 interface ItemResponse {
   detail: string;
@@ -26,13 +26,17 @@ function ItemList(props: FrequencyCount){
   </div>)
 }
 
-function ComponentA(props: { text: string[]}){
+function ComponentA(props: {
+  text: string[];
+  goBack: () => void;
+}) {
   for (let i = 0; i < props.text.length; i++) {
     console.log(props.text[i]);
   }
 
   return (
     <div>
+      <button onClick={props.goBack}/>
       <For each={props.text}>
         {(item) => (<span class={Sss.textItem}>{item}</span>)}
       </For>
@@ -43,7 +47,7 @@ function ComponentA(props: { text: string[]}){
 
 export default function App() {
 
-  let inputRef!: HTMLInputElement;
+  let inputRef!: HTMLTextAreaElement;
   const [rawText, setRawText] = createSignal<string>("")
   const [serverResponse, setServerResponse] = createSignal < ItemResponse | null >(null)
   const [triggerAnalyzedText, setTriggerAnalyzedText] = createSignal<boolean>(false)
@@ -74,17 +78,13 @@ export default function App() {
   return (
     <div class={Sss.mainDiv}>
       <div class="text">Please paste/enter Japanese text</div>
-      <Show when={!triggerAnalyzedText()} fallback={<ComponentA text={serverResponse()!.tokenizedText} />}>
+      <Show when={!triggerAnalyzedText()} fallback={<ComponentA text={serverResponse()!.tokenizedText} goBack={() =>setTriggerAnalyzedText(false)} />}>
         <div class={Sss.userInput}>
-          <input
+          <textarea
             class={Sss.inputField}
-            type="text"
-            name="userInput"
             ref={inputRef}
-            placeholder="Raw Text"
             autocomplete="off"
-            value={"空が好きだ"}
-          />
+          >{ "空が好きだ"}</textarea>
           </div>
           <button onClick={sendText}>Send</button>
       </Show>

@@ -29,5 +29,6 @@ export const inputField = style({
   padding: '10px',
   minWidth: '250px',
   minHeight: 'auto',
-  maxWidth: '500px'
+  maxWidth: '500px',
+  resize: 'none'
 })
