@@ -28,7 +28,9 @@ function ItemList(props: FrequencyCount){
 
 function ComponentA(props: {
   text: string[];
+  frequencyList: Record<string, number>;
   goBack: () => void;
+
 }) {
   for (let i = 0; i < props.text.length; i++) {
     console.log(props.text[i]);
@@ -37,9 +39,13 @@ function ComponentA(props: {
   return (
     <div>
       <button onClick={props.goBack}/>
-      <For each={props.text}>
+      <For
+        each={props.text}>
         {(item) => (<span class={Sss.textItem}>{item}</span>)}
       </For>
+      <ItemList
+        words={props.frequencyList}
+      />
     </div>
   )
 }
@@ -78,7 +84,7 @@ export default function App() {
   return (
     <div class={Sss.mainDiv}>
       <div class="text">Please paste/enter Japanese text</div>
-      <Show when={!triggerAnalyzedText()} fallback={<ComponentA text={serverResponse()!.tokenizedText} goBack={() =>setTriggerAnalyzedText(false)} />}>
+      <Show when={!triggerAnalyzedText()} fallback={<ComponentA text={serverResponse()!.tokenizedText} frequencyList={serverResponse()!.frequencyAnalysis} goBack={() => setTriggerAnalyzedText(false)} />}>
         <div class={Sss.userInput}>
           <textarea
             class={Sss.inputField}
@@ -88,10 +94,6 @@ export default function App() {
           </div>
           <button onClick={sendText}>Send</button>
       </Show>
-      <ItemList words={
-        serverResponse()?.frequencyAnalysis
-        ?? { "": 0 }
-      }/>
     </div>
   );
 }
