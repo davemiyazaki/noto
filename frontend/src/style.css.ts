@@ -35,3 +35,8 @@ export const inputField = style({
   resize: 'none',
   boxShadow:'0 0 18px -12px #919191 inset '
 })
+
+
+export const wordBox = style({
+  backgroundColor: "blue",
+})
