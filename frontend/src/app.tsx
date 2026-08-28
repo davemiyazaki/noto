@@ -86,15 +86,20 @@ export default function App() {
       class={Sss.mainDiv}
     >
       <div class="text">Enter Japanese text</div>
-      <Show when={!triggerAnalyzedText()} fallback={<ComponentA text={serverResponse()!.tokenizedText} frequencyList={serverResponse()!.frequencyAnalysis} goBack={() => setTriggerAnalyzedText(false)} />}>
-        <div class={Sss.userInput}>
-          <textarea
-            class={Sss.inputField}
-            ref={inputRef}
-            autocomplete="off"
-          >{ "空が好きだ"}</textarea>
-          </div>
-          <button onClick={sendText}>Send</button>
+      <div class={Sss.userInput}>
+        <textarea
+          class={Sss.inputField}
+          ref={inputRef}
+          autocomplete="off"
+        >{"空が好きだ"}</textarea>
+      </div>
+        <button onClick={sendText}>Send</button>
+      <Show when={triggerAnalyzedText() === true}>
+        <ComponentA
+          text={serverResponse()!.tokenizedText}
+          frequencyList={serverResponse()!.frequencyAnalysis}
+          goBack={() => setTriggerAnalyzedText(false)}
+        />
       </Show>
     </div>
   );
