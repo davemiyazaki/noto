@@ -40,7 +40,25 @@ export const inputField = style({
 export const wordBox = style({
   border: "1px grey solid",
   padding: "4px 8px",
-  marginBottom: "8px",
   width:"fit-content"
 
+})
+
+export const countBox = style({
+  border: "1px grey solid",
+  padding: "4px 8px",
+  marginLeft:"8px",
+  width: "fit-content",
+  display: "flex",
+  justifyContent: "center",
+  height:"fit-content"
+})
+
+
+export const frequencySection = style({
+  transition: "background-color 0.2s ease",
+
+  ":hover": {
+    backgroundColor:"#f0f0f0"
+  }
 })

@@ -16,9 +16,9 @@ function ItemList(props: FrequencyCount){
   <div>
       <For each={Object.entries(props.words)}>
       {([key, value]) => (
-          <div style={{display:"flex", "flex-direction":"row"}}>
+          <div style={{"margin-bottom":"8px", display:"flex", "flex-direction":"row", "justify-content":"space-between", "align-items":"center",width:"250px" ,"max-width":"250px"}}>
             <div class={Sss.wordBox}>{key}</div>
-          <span>{value}</span>
+            <div class={Sss.countBox}>{value}</div>
         </div>
         )
       }
