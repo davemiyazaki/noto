@@ -38,7 +38,6 @@ function ComponentA(props: {
 
   return (
     <div>
-      <button onClick={props.goBack}/>
       <For
         each={props.text}>
         {(item) => (<span class={Sss.textItem}>{item}</span>)}
@@ -46,6 +45,7 @@ function ComponentA(props: {
       <ItemList
         words={props.frequencyList}
       />
+      <button onClick={props.goBack}>Clear</button>
     </div>
   )
 }
@@ -93,7 +93,7 @@ export default function App() {
           autocomplete="off"
         >{"空が好きだ"}</textarea>
       </div>
-        <button onClick={sendText}>Send</button>
+        <button onClick={sendText}>Submit</button>
       <Show when={triggerAnalyzedText() === true}>
         <ComponentA
           text={serverResponse()!.tokenizedText}
