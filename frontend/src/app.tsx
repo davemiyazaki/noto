@@ -38,10 +38,12 @@ function ComponentA(props: {
 
   return (
     <div>
-      <For
-        each={props.text}>
-        {(item) => (<span class={Sss.textItem}>{item}</span>)}
-      </For>
+      <div class={Sss.analyzedText}>
+        <For
+          each={props.text}>
+          {(item) => (<span class={Sss.textItem}>{item}</span>)}
+        </For>
+      </div>
       <ItemList
         words={props.frequencyList}
       />

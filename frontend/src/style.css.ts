@@ -73,3 +73,8 @@ export const countBox = style({
       }
     }
 })
+
+
+export const analyzedText = style({
+  color:"purple"
+})
