@@ -37,10 +37,25 @@ export const inputField = style({
 })
 
 
+export const frequencySection = style({
+  transition: "background-color 0.2s step-start",
+
+  ":hover": {
+    backgroundColor: "rgba(241, 227, 227, 0.5)",
+    color: "rgb(128, 0, 0)",
+  }
+})
+
 export const wordBox = style({
   border: "1px grey solid",
   padding: "4px 8px",
   width: "fit-content",
+
+  selectors: {
+    [`${frequencySection}:hover &`]: {
+      borderColor: "rgb(128, 0, 0)",
+    }
+  }
 })
 
 export const countBox = style({
@@ -50,20 +65,11 @@ export const countBox = style({
   width: "fit-content",
   display: "flex",
   justifyContent: "center",
-  height:"fit-content"
-})
+  height:"fit-content",
 
-
-export const frequencySection = style({
-  transition: "background-color 0.2s step-start",
-
-  ":hover": {
-    backgroundColor: "rgba(241, 227, 227, 0.5)",
-    color: "rgb(128, 0, 0)",
-  },
   selectors: {
-    [`&:hover ${wordBox}`]: {
-      borderColor: "rgb(128, 0, 0)",
+      [`${frequencySection}:hover &`]: {
+        borderColor: "rgb(128, 0, 0)",
+      }
     }
-  }
 })
