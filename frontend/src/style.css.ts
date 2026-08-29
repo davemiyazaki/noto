@@ -18,7 +18,14 @@ export const userInput = style({
   flexDirection: 'row'
 })
 
-export const textItem = style({
+export const analyzedText = style({
+  color:"purple",
+  maxWidth: '500px',
+
+})
+
+export const textItem = style({ //see analyzedText as PARENT
+  marginRight:'0.5rem',
   transition: 'background-color 0.2s ease',
   ':hover': {
     backgroundColor: '#FFC7A2'
@@ -72,9 +79,4 @@ export const countBox = style({
         borderColor: "rgb(128, 0, 0)",
       }
     }
-})
-
-
-export const analyzedText = style({
-  color:"purple"
 })
