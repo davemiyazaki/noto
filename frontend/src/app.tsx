@@ -13,7 +13,7 @@ type FrequencyCount = {
 
 function ItemList(props: FrequencyCount){
   return(
-  <div>
+    <div class={Sss.frequencySection}>
       <For each={Object.entries(props.words)}>
       {([key, value]) => (
         <div class={Sss.frequencyElement} style={{"margin-bottom":"8px", display:"flex", "flex-direction":"row", "justify-content":"space-between", "align-items":"center",width:"250px" ,"max-width":"250px"}}>
@@ -93,7 +93,7 @@ export default function App() {
           class={Sss.inputField}
           ref={inputRef}
           autocomplete="off"
-        >{"空が好きだ"}</textarea>
+        >{"旅行の計画を立てるときは、行きたい場所を全部詰め込むよりも、予定に少し余裕を持たせたほうが、現地で予想外の出来事が起きても楽しめる。"}</textarea>
       </div>
         <button onClick={sendText}>Submit</button>
       <Show when={triggerAnalyzedText() === true}>
