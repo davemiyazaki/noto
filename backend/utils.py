@@ -45,8 +45,12 @@ def calculateWordFrequency(wordList:list[str]):
 
 
 def __debug():
-  someDict = analyzeText("空が好きだ")
-  print(f"some sort of dictionary that contains: {someDict["text"]}")
+    morphemes = tokenizer.tokenize("空が好きだ", SplitMode.A)
+
+    for i in morphemes:
+        print(f"Surface: {i.surface()}")
+        print(f"Dictionary form: {i.dictionary_form()}")
+        print(f"POS: {i.part_of_speech()}\n\n\n")
 
 
-#__debug()
+__debug()
