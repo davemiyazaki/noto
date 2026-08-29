@@ -44,9 +44,13 @@ export const inputField = style({
 })
 
 
+export const frequencySection = style({
+  maxHeight: "500px"
+})
+
 export const frequencyElement = style({
-  transition: "background-color 0.2s step-start",
   maxHeight: "500px",
+  transition: "background-color 0.2s step-start",
   ":hover": {
     backgroundColor: "rgba(241, 227, 227, 0.5)",
     color: "rgb(128, 0, 0)",
