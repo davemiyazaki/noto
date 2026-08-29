@@ -14,16 +14,14 @@ def analyzeText(userInput:str):
 
 def createReadableTokenizedText(rawText:str):
     morphemes = tokenizer.tokenize(rawText, SplitMode.A)
+    ALLOWED_POS = ["名詞", "形状詞", "形容詞","動詞", "副詞"]
 
     morpheme_list = []
     originalTextSplit = []
-    for i in range(morphemes.size()):
-        morpheme_list.append(morphemes[i].dictionary_form())
-        originalTextSplit.append(morphemes[i].raw_surface())
-
-    # DEBUG
-    #print(f"LIST OF MORPHEMES IS {morpheme_list} ")
-
+    for i in morphemes:
+        if i.part_of_speech()[0] in ALLOWED_POS:
+            morpheme_list.append(i.dictionary_form())
+        originalTextSplit.append(i.raw_surface())
     return morpheme_list, originalTextSplit;
 
 
@@ -34,8 +32,6 @@ def calculateWordFrequency(wordList:list[str]):
     wordDictionary = dict.fromkeys(wordList, initialValue)
     wordDictionaryItems = list(wordDictionary.keys())
 
-    # DEBUG
-    #print(f"LIST OF WORD DICTIONARY KEYS IS {wordDictionaryItems} ")
 
     for i in range(len(wordDictionaryItems)):
         frequencyCount = wordList.count(wordDictionaryItems[i])
@@ -45,12 +41,27 @@ def calculateWordFrequency(wordList:list[str]):
 
 
 def __debug():
-    morphemes = tokenizer.tokenize("空が好きだ", SplitMode.A)
+
+    ALLOWED_POS = ["名詞", "形状詞", "形容詞","動詞", "副詞"]
+    morphemes = tokenizer.tokenize("旅行の計画を立てるときは、行きたい場所を全部詰め込むよりも、予定に少し余裕を持たせたほうが、現地で予想外の出来事が起きても楽しめる。", SplitMode.B)
+    matchedList  = []
+    ignoredList = []
 
     for i in morphemes:
-        print(f"Surface: {i.surface()}")
-        print(f"Dictionary form: {i.dictionary_form()}")
-        print(f"POS: {i.part_of_speech()}\n\n\n")
+        word = i.surface()
+        print(f"Surface: {word}")
+        if i.part_of_speech()[0] in ALLOWED_POS:
+            matchedList.append(word)
+        else:
+            ignoredList.append(word)
+        print(f"POS: {i.part_of_speech()[0]} {i.part_of_speech()[1]}\n\n")
 
+    print("MATCHED LIST ______________")
+    for i in matchedList:
+        print(i)
 
-__debug()
+    print("unMATCHED LIST ______________")
+    for i in ignoredList:
+        print(i)
+
+#__debug()
