@@ -45,7 +45,10 @@ export const inputField = style({
 
 
 export const frequencySection = style({
-  maxHeight: "500px"
+  maxHeight: "500px",
+  display: "flex",
+  flexDirection: "column",
+  flexWrap:"wrap"
 })
 
 export const frequencyElement = style({
