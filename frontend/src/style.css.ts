@@ -20,7 +20,9 @@ export const userInput = style({
 
 export const analyzedText = style({
   color:"purple",
+  padding: '10px',
   maxWidth: '500px',
+  border:'1px solid black'
 
 })
 

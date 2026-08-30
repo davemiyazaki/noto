@@ -13,8 +13,8 @@ type FrequencyCount = {
 
 function ItemList(props: FrequencyCount){
   return(
-    <>
-      <span>KEY VOCABULARY</span>
+    <div style={{display:'flex', "flex-direction":"column", "justify-content":"center" }}>
+      <span style={{"text-align":"center"}}>KEY VOCABULARY</span>
       <div class={Sss.frequencySection}>
         <For each={Object.entries(props.words)}>
         {([key, value]) => (
@@ -26,7 +26,7 @@ function ItemList(props: FrequencyCount){
         }
         </For>
       </div>
-    </>
+    </div>
   )
 }
 
@@ -41,7 +41,7 @@ function ComponentA(props: {
   }
 
   return (
-    <div>
+    <div >
       <div class={Sss.analyzedText}>
         <For
           each={props.text}>
