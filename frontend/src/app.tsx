@@ -13,18 +13,21 @@ type FrequencyCount = {
 
 function ItemList(props: FrequencyCount){
   return(
-    <div class={Sss.frequencySection}>
+    <>
       <span>KEY VOCABULARY</span>
-      <For each={Object.entries(props.words)}>
-      {([key, value]) => (
-        <div class={Sss.frequencyElement} style={{"margin-right":"8px","margin-bottom":"8px", display:"flex", "flex-direction":"row", "justify-content":"space-between", "align-items":"center",width:"250px" ,"max-width":"250px"}}>
-            <div class={Sss.wordBox}>{key}</div>
-            <div class={Sss.countBox}>{value}</div>
-        </div>
-        )
-      }
-      </For>
-  </div>)
+      <div class={Sss.frequencySection}>
+        <For each={Object.entries(props.words)}>
+        {([key, value]) => (
+          <div class={Sss.frequencyElement} style={{"margin-right":"8px","margin-bottom":"8px", display:"flex", "flex-direction":"row", "justify-content":"space-between", "align-items":"center",width:"250px" ,"max-width":"250px"}}>
+              <div class={Sss.wordBox}>{key}</div>
+              <div class={Sss.countBox}>{value}</div>
+          </div>
+          )
+        }
+        </For>
+      </div>
+    </>
+  )
 }
 
 function ComponentA(props: {
