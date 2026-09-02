@@ -29,6 +29,7 @@ export const analyzedText = style({
 export const textItem = style({ //see analyzedText as PARENT
   marginRight:'0.5rem',
   transition: 'background-color 0.2s ease',
+  cursor:"pointer",
   ':hover': {
     backgroundColor: '#FFC7A2'
   }
